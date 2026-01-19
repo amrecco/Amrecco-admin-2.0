@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <a href="tel:+13155378877" className="hover:text-blue-400 transition-colors">
+                <a className="hover:text-blue-400 transition-colors">
                   +1 315-537-8877
                 </a>
               </div>
@@ -40,17 +40,17 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-6">Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/services/candidate-bench" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors">
                   Candidate Bench
                 </Link>
               </li>
               <li>
-                <Link href="/services/ai-sales-agents" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors">
                   AI Sales Agents
                 </Link>
               </li>
               <li>
-                <Link href="/services/join-network" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors">
                   Join Our Network
                 </Link>
               </li>
@@ -62,22 +62,22 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-6">Company</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/process" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors">
                   Our Process
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors">
                   Testimonials
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors">
                   Contact
                 </Link>
               </li>
@@ -89,18 +89,15 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-wrap items-center gap-6 text-sm text-gray-400">
             <span>© 2026 Amrecco. All rights reserved.</span>
-            <Link href="/privacy" className="hover:text-blue-400 transition-colors">
+            <Link href="/" className="hover:text-blue-400 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-blue-400 transition-colors">
+            <Link href="/" className="hover:text-blue-400 transition-colors">
               Terms of Service
             </Link>
           </div>
           <div className="flex gap-4">
             <a
-              href="https://www.linkedin.com/company/amrecco"
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 transition-colors"
               aria-label="LinkedIn"
             >
