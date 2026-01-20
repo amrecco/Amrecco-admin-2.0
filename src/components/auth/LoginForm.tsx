@@ -31,7 +31,7 @@ const handleSubmit = async (e: FormEvent) => {
       throw new Error(data.error || 'Login failed');
     }
 
-
+    router.refresh();
     router.replace('/');
   } catch (err: any) {
     setError(err.message || 'An error occurred during login');
