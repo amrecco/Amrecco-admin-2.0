@@ -3,26 +3,35 @@ import type { NextRequest } from 'next/server';
 
 export async function middleware(request: NextRequest) {
   const token = request.cookies.get('accessToken')?.value;
-
   const { pathname } = request.nextUrl;
 
   // Public routes
   if (pathname === '/login') {
     if (token) {
-      return NextResponse.redirect(new URL('/', request.url));
+      const url = request.nextUrl.clone();
+      url.pathname = '/';
+      return NextResponse.redirect(url);
     }
     return NextResponse.next();
   }
 
-  // Protect dashboard routes
-  if (pathname === '/' || pathname.startsWith('/kanban') || pathname.startsWith('/profile') || pathname.startsWith('/settings')) {
-    if (!token) {
-      return NextResponse.redirect(new URL('/login', request.url));
-    }
+  // Protected routes
+  const protectedPaths = ['/', '/kanban', '/profile', '/settings'];
+  const isProtectedRoute = protectedPaths.some(path => 
+    pathname === path || pathname.startsWith(`${path}/`)
+  );
+
+  if (isProtectedRoute && !token) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/login';
+    // Add return URL to help with debugging
+    url.searchParams.set('from', pathname);
+    return NextResponse.redirect(url);
   }
 
   return NextResponse.next();
 }
+
 export const config = {
   matcher: ['/', '/login', '/kanban/:path*', '/profile/:path*', '/settings/:path*']
 };
