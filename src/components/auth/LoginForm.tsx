@@ -70,7 +70,7 @@ const handleSubmit = async (e: FormEvent) => {
           </label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
-         <input
+       <input
   name="username"
   type="text"
   required
@@ -79,7 +79,7 @@ const handleSubmit = async (e: FormEvent) => {
     setFormData({ ...formData, username: e.target.value })
   }
   placeholder="Enter your username"
-  className="w-full h-11 rounded-lg border border-gray-300 pl-10 pr-4 text-sm"
+  className="w-full h-11 rounded-lg border border-gray-300 pl-10 pr-4 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0A2458] focus:border-transparent"
 />
 
           </div>
@@ -92,7 +92,7 @@ const handleSubmit = async (e: FormEvent) => {
           </label>
           <div className="relative">
             <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
-         <input
+       <input
   name="password"
   type="password"
   required
@@ -101,7 +101,7 @@ const handleSubmit = async (e: FormEvent) => {
     setFormData({ ...formData, password: e.target.value })
   }
   placeholder="Enter your password"
-  className="w-full h-11 rounded-lg border border-gray-300 pl-10 pr-4 text-sm"
+  className="w-full h-11 rounded-lg border border-gray-300 pl-10 pr-4 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0A2458] focus:border-transparent"
 />
 
           </div>

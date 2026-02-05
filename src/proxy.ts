@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const token = request.cookies.get('accessToken')?.value;
   const { pathname } = request.nextUrl;
 
@@ -24,7 +24,6 @@ export async function middleware(request: NextRequest) {
   if (isProtectedRoute && !token) {
     const url = request.nextUrl.clone();
     url.pathname = '/login';
-    // Add return URL to help with debugging
     url.searchParams.set('from', pathname);
     return NextResponse.redirect(url);
   }
